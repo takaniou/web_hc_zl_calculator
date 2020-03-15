@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Microsoft Jhenghei, serif;
+}
+
+.box {
+    background: #314164;
+    width: 500px;
+    height: 700px;
+    margin: 100px auto 0;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px #0000004d;
+}
+
+.box div {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 50px;
+}
+
+.box .result {
+    grid-column: 1 / 5;
+    padding: 50px;
+}
