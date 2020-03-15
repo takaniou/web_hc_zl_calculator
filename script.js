@@ -12,6 +12,13 @@ function equal() {
     if (final == "") {
         return;
     }
+
+    var last = final[final.length - 1];
+
+    if (last == "+" || last == "-" || last == "*" || last == "/") {
+        return;
+    }
+
     result.innerHTML = eval(final);
     final = "";
 }
@@ -35,9 +42,23 @@ function show(content) {
     }
 
     var last = final[final.length - 1];
-    console.log(last);
+
+    if (last == "+" || last == "-" || last == "*" || last == "/") {
+        if (content == "+" || content == "-" || content == "*" || content == "/") {
+            return;
+        }
+    }
 
     final += content;
     // 結果元素.內容 = 參數-內容
     result.innerHTML = final;
+}
+
+var clearBtn = document.getElementById('clear');
+
+clearBtn.addEventListener('click', clear);
+
+function clear() {
+    final = "";
+    result.innerHTML = "0";
 }
